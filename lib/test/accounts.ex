@@ -2,7 +2,6 @@ defmodule Test.Accounts do
   alias Test.Repo
   alias Test.Accounts.User
 
-
   @doc """
   Returns the list of users.
 
