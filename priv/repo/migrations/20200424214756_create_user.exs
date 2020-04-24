@@ -7,5 +7,6 @@ defmodule Test.Repo.Migrations.CreateUser do
       add :email, :string
       add :password, :string
       timestamps()
+    end
   end
 end
