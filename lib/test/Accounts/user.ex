@@ -1,0 +1,27 @@
+defmodule Test.Accounts.User do
+  use Ecto.Schema
+  import Ecto.Changeset
+
+
+  schema "user" do
+    field(:email, :string)
+    field(:password, :string)
+    field(:name, :string)
+
+    timestamps(inserted_at: :created_date, updated_at: false)
+  end
+
+  def changeset(user, attrs) do
+    user
+    |> cast(attrs, [:email, :password, :name])
+    |> validate_required([:email, :password])
+    |> validate_format(:email, ~r/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/)
+  end
+
+  def update_changeset(user, attrs) do
+    user
+    |> cast(attrs, [:email, :password, :name])
+    |> validate_required([:email, :password])
+    |> validate_format(:email, ~r/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/)
+  end
+end
