@@ -10,3 +10,7 @@ defmodule Test.Repo.Migrations.CreateUser do
     end
   end
 end
+
+# mix ecto.gen.migration
+# mix ecto.migrations
+# mix ecto.migrate
